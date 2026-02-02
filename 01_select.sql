@@ -1,1 +1,3 @@
-SELECT idCliente, qtdePontos FROM clientes
+SELECT idCliente, qtdePontos, DtCriacao FROM clientes;
+
+SELECT 'FODASE';

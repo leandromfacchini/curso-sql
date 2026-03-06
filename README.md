@@ -27,6 +27,16 @@ Também existem arquivos CSV que servem como dados de entrada para experimentaç
 - `transacao_produto.csv` - Relação entre transações e produtos
 - `transacoes.csv` - Registros de transações
 
+## Exercícios
+
+A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado dos conceitos apresentados:
+
+### Exercícios de WHERE
+- `01_where.sql` até `09_where.sql` - Exercícios sobre filtros e condições
+
+### Exercícios de GROUP BY
+- `01_groupby.sql` até `05_groupby.sql` - Exercícios sobre agrupamento de dados
+
 ## Objetivo
 
 Fornecer exemplos práticos e arquivos de dados para aprendizado e prática de consultas SQL em um ambiente controlado. Ideal para iniciantes que desejam entender como operar em um banco de dados relacional.

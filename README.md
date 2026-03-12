@@ -35,7 +35,7 @@ A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado
 - `01_where.sql` até `09_where.sql` - Exercícios sobre filtros e condições
 
 ### Exercícios de GROUP BY
-- `01_groupby.sql` até `05_groupby.sql` - Exercícios sobre agrupamento de dados
+- `01_groupby.sql` até `08_group_by.sql` - Exercícios sobre agrupamento de dados
 
 ## Objetivo
 
@@ -46,8 +46,4 @@ Fornecer exemplos práticos e arquivos de dados para aprendizado e prática de c
 1. Clone o repositório
 2. Importe os arquivos CSV em seu SGBD preferido (por exemplo, MySQL, PostgreSQL, SQLite)
 3. Execute os scripts `.sql` para ver exemplos práticos e teste suas próprias consultas
-
-
----
-
-*Este documento foi gerado automaticamente com base no conteúdo do repositório.*
+4. Resolva os exercícios na pasta `exercicios/` para praticar os conceitos aprendidos

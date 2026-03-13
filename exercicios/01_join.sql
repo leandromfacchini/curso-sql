@@ -1,0 +1,1 @@
+-- Quais clientes mais perderam pontos por Lover?

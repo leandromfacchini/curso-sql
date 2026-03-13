@@ -19,6 +19,7 @@ Cada arquivo `.sql` possui um nome que indica a lição ou conceito abordado:
 - `11_stats.sql` - Estatísticas e funções agregadas
 - `12_groupby.sql` - Agrupamento com GROUP BY
 - `12_groupby_2.sql` - Continuação do grupo de exemplos
+- `13_join.sql` - Joins entre tabelas
 
 Também existem arquivos CSV que servem como dados de entrada para experimentações:
 
@@ -36,6 +37,16 @@ A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado
 
 ### Exercícios de GROUP BY
 - `01_groupby.sql` até `08_group_by.sql` - Exercícios sobre agrupamento de dados
+
+## Prática Adicional
+
+A pasta `praticar/` contém exercícios adicionais para prática:
+
+### Exercícios de WHERE
+- `01_where.sql` até `04_where.sql` - Exercícios sobre filtros e condições
+
+### Exercícios de JOIN
+- `01_join.sql` até `03_join.sql` - Exercícios sobre joins entre tabelas
 
 ## Objetivo
 

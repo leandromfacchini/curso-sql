@@ -2,10 +2,19 @@
 
 Este repositório foi criado para acompanhar um curso de SQL e é composto por diversos arquivos de exemplo que demonstram conceitos e práticas em SQL. O foco principal é ensinar seleção de dados, filtros, agregações e operações comuns em bancos de dados relacionais.
 
+## Sumário
+
+- [Estrutura do repositório](#estrutura-do-repositório)
+- [Pré-requisitos](#pré-requisitos)
+- [Como executar](#como-executar)
+- [Exercícios](#exercícios)
+- [Prática Adicional](#prática-adicional)
+
 ## Estrutura do repositório
 
 Cada arquivo `.sql` possui um nome que indica a lição ou conceito abordado:
 
+### Pasta `src/`
 - `01_select.sql` - Instruções SELECT básicas
 - `02_tables.sql` - Criação e visualização de tabelas
 - `03_select_from.sql` - SELECT com FROM
@@ -28,6 +37,31 @@ Também existem arquivos CSV que servem como dados de entrada para experimentaç
 - `transacao_produto.csv` - Relação entre transações e produtos
 - `transacoes.csv` - Registros de transações
 
+## Pré-requisitos
+
+- Um sistema de gerenciamento de banco de dados SQL (como MySQL, PostgreSQL, SQLite ou SQL Server).
+- Ferramenta para executar consultas SQL (como MySQL Workbench, pgAdmin, DBeaver ou linha de comando).
+
+## Como executar
+
+1. **Importe os dados**: Use os arquivos CSV para criar tabelas no seu banco de dados. Por exemplo, no MySQL:
+   ```sql
+   CREATE TABLE clientes (
+       id INT PRIMARY KEY,
+       nome VARCHAR(255),
+       -- outros campos conforme necessário
+   );
+   LOAD DATA INFILE 'clientes.csv' INTO TABLE clientes
+   FIELDS TERMINATED BY ','
+   LINES TERMINATED BY '\n'
+   IGNORE 1 ROWS;
+   ```
+   Repita para os outros arquivos CSV (`produtos.csv`, `transacao_produto.csv`, `transacoes.csv`).
+
+2. **Execute os arquivos SQL**: Abra cada arquivo `.sql` em sua ferramenta SQL e execute as consultas para ver os resultados.
+
+3. **Pratique com exercícios**: Navegue pelas pastas `exercicios/` e `praticar/` para resolver os exercícios propostos.
+
 ## Exercícios
 
 A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado dos conceitos apresentados:
@@ -37,6 +71,9 @@ A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado
 
 ### Exercícios de GROUP BY
 - `01_groupby.sql` até `08_group_by.sql` - Exercícios sobre agrupamento de dados
+
+### Exercícios de JOIN
+- `01_join.sql` até `03_join.sql` - Exercícios sobre joins entre tabelas
 
 ## Prática Adicional
 

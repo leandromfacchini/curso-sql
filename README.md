@@ -2,7 +2,7 @@
 
 Repositório com exemplos, exercícios e arquivos de apoio para estudo de SQL usando uma base simples de clientes, produtos e transações.
 
-O material está organizado em uma sequência progressiva: começando com `SELECT` e `WHERE`, avançando para agregações, `GROUP BY`, `JOIN` e subqueries.
+O material está organizado em uma sequência progressiva: começando com `SELECT` e `WHERE`, avançando para agregações, `GROUP BY`, `JOIN`, subqueries e `CTE`.
 
 ## Conteúdo
 
@@ -33,6 +33,7 @@ Os arquivos em `src/` seguem a trilha principal do curso:
 - `14_subquery.sql`: subquery com `IN`
 - `15_subquery.sql`: subquery para cruzar clientes entre datas
 - `16_subquery.sql`: subquery derivada no `FROM`
+- `17_cte.sql`: introdução a `CTE` com `WITH` e composição de consultas
 
 ## Base de dados
 
@@ -65,7 +66,7 @@ Dentro do SQLite, você pode executar consultas manualmente ou carregar um scrip
 ```sql
 .read src/01_select.sql
 .read src/13_join.sql
-.read src/16_subquery.sql
+.read src/17_cte.sql
 ```
 
 Para listar as tabelas:
@@ -89,7 +90,7 @@ Depois, crie as tabelas e importe os arquivos conforme o schema do projeto.
 
 O repositório também inclui material para treino:
 
-- `21` arquivos em `exercicios/`
+- `22` arquivos em `exercicios/`
 - `7` arquivos em `praticar/`
 
 Temas disponíveis:
@@ -97,6 +98,7 @@ Temas disponíveis:
 - `WHERE`
 - `GROUP BY`
 - `JOIN`
+- `CTE`
 
 ## Requisitos
 
@@ -106,4 +108,4 @@ Se preferir, você também pode adaptar os scripts para outro SGBD, mas alguns c
 
 ## Objetivo
 
-Servir como apoio prático para quem está aprendendo SQL com exemplos curtos, dados reais de teste e exercícios para praticar consulta, filtro, agregação e relacionamento entre tabelas.
+Servir como apoio prático para quem está aprendendo SQL com exemplos curtos, dados reais de teste e exercícios para praticar consulta, filtro, agregação, relacionamento entre tabelas e composição de consultas com subqueries e `CTE`.

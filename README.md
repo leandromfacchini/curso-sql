@@ -1,97 +1,109 @@
-# Curso SQL Repository
+# Curso de SQL
 
-Este repositório foi criado para acompanhar um curso de SQL e é composto por diversos arquivos de exemplo que demonstram conceitos e práticas em SQL. O foco principal é ensinar seleção de dados, filtros, agregações e operações comuns em bancos de dados relacionais.
+Repositório com exemplos, exercícios e arquivos de apoio para estudo de SQL usando uma base simples de clientes, produtos e transações.
 
-## Sumário
+O material está organizado em uma sequência progressiva: começando com `SELECT` e `WHERE`, avançando para agregações, `GROUP BY`, `JOIN` e subqueries.
 
-- [Estrutura do repositório](#estrutura-do-repositório)
-- [Pré-requisitos](#pré-requisitos)
-- [Como executar](#como-executar)
-- [Exercícios](#exercícios)
-- [Prática Adicional](#prática-adicional)
+## Conteúdo
 
-## Estrutura do repositório
+- `src/`: scripts principais das aulas
+- `exercicios/`: exercícios para fixação
+- `praticar/`: listas extras de prática
+- `database.db`: banco SQLite já pronto para uso
+- `*.csv`: arquivos de dados usados no projeto
 
-Cada arquivo `.sql` possui um nome que indica a lição ou conceito abordado:
+## Sequência das aulas
 
-### Pasta `src/`
-- `01_select.sql` - Instruções SELECT básicas
-- `02_tables.sql` - Criação e visualização de tabelas
-- `03_select_from.sql` - SELECT com FROM
-- `04_where.sql` - Filtragem com WHERE
-- `05_select_col.sql` - Seleção de colunas específicas
-- `06_order_by.sql` - Ordenação de resultados
-- `07_case_when.sql` - Uso de CASE WHEN
-- `08_count.sql` - Função COUNT
-- `09_count_distinct.sql` - COUNT DISTINCT
-- `10_sum.sql` - Funções SUM
-- `11_stats.sql` - Estatísticas e funções agregadas
-- `12_groupby.sql` - Agrupamento com GROUP BY
-- `12_groupby_2.sql` - Continuação do grupo de exemplos
-- `13_join.sql` - Joins entre tabelas
+Os arquivos em `src/` seguem a trilha principal do curso:
 
-Também existem arquivos CSV que servem como dados de entrada para experimentações:
+- `01_select.sql`: `SELECT` básico
+- `02_tables.sql`: visualização de tabelas no SQLite
+- `03_select_from.sql`: consultas com `FROM` e `LIMIT`
+- `04_where.sql`: filtros com `WHERE`
+- `05_select_col.sql`: seleção de colunas e transformações simples
+- `06_order_by.sql`: ordenação com `ORDER BY`
+- `07_case_when.sql`: classificações com `CASE WHEN`
+- `08_count.sql`: introdução a `COUNT`
+- `09_count_distinct.sql`: uso de `COUNT(DISTINCT ...)`
+- `10_sum.sql`: somatórios e agregações condicionais
+- `11_stats.sql`: `AVG`, `MIN`, `MAX` e métricas agregadas
+- `12_groupby.sql`: agrupamento básico com `GROUP BY`
+- `12_groupby_2.sql`: `GROUP BY` com `HAVING`, ordenação e `LIMIT`
+- `13_join.sql`: relacionamentos com `JOIN`
+- `14_subquery.sql`: subquery com `IN`
+- `15_subquery.sql`: subquery para cruzar clientes entre datas
+- `16_subquery.sql`: subquery derivada no `FROM`
 
-- `clientes.csv` - Dados de clientes
-- `produtos.csv` - Dados de produtos
-- `transacao_produto.csv` - Relação entre transações e produtos
-- `transacoes.csv` - Registros de transações
+## Base de dados
 
-## Pré-requisitos
+O projeto já inclui um banco SQLite em [`database.db`](/home/leandro/repos/github/curso-sql/database.db), com estas tabelas:
 
-- Um sistema de gerenciamento de banco de dados SQL (como MySQL, PostgreSQL, SQLite ou SQL Server).
-- Ferramenta para executar consultas SQL (como MySQL Workbench, pgAdmin, DBeaver ou linha de comando).
+- `clientes`
+- `produtos`
+- `transacoes`
+- `transacao_produto`
+
+Os arquivos CSV também estão disponíveis para referência ou reimportação:
+
+- `clientes.csv`
+- `produtos.csv`
+- `transacoes.csv`
+- `transacao_produto.csv`
+
+Observação: os CSVs usam `;` como separador.
 
 ## Como executar
 
-1. **Importe os dados**: Use os arquivos CSV para criar tabelas no seu banco de dados. Por exemplo, no MySQL:
-   ```sql
-   CREATE TABLE clientes (
-       id INT PRIMARY KEY,
-       nome VARCHAR(255),
-       -- outros campos conforme necessário
-   );
-   LOAD DATA INFILE 'clientes.csv' INTO TABLE clientes
-   FIELDS TERMINATED BY ','
-   LINES TERMINATED BY '\n'
-   IGNORE 1 ROWS;
-   ```
-   Repita para os outros arquivos CSV (`produtos.csv`, `transacao_produto.csv`, `transacoes.csv`).
+A forma mais simples é usar o banco SQLite já incluído no repositório:
 
-2. **Execute os arquivos SQL**: Abra cada arquivo `.sql` em sua ferramenta SQL e execute as consultas para ver os resultados.
+```bash
+sqlite3 database.db
+```
 
-3. **Pratique com exercícios**: Navegue pelas pastas `exercicios/` e `praticar/` para resolver os exercícios propostos.
+Dentro do SQLite, você pode executar consultas manualmente ou carregar um script:
 
-## Exercícios
+```sql
+.read src/01_select.sql
+.read src/13_join.sql
+.read src/16_subquery.sql
+```
 
-A pasta `exercicios/` contém exercícios práticos para reforçar o aprendizado dos conceitos apresentados:
+Para listar as tabelas:
 
-### Exercícios de WHERE
-- `01_where.sql` até `09_where.sql` - Exercícios sobre filtros e condições
+```sql
+.tables
+```
 
-### Exercícios de GROUP BY
-- `01_groupby.sql` até `08_group_by.sql` - Exercícios sobre agrupamento de dados
+## Reimportando os dados no SQLite
 
-### Exercícios de JOIN
-- `01_join.sql` até `03_join.sql` - Exercícios sobre joins entre tabelas
+Se quiser recriar as tabelas a partir dos CSVs, use o modo CSV com separador `;`:
 
-## Prática Adicional
+```sql
+.mode csv
+.separator ;
+```
 
-A pasta `praticar/` contém exercícios adicionais para prática:
+Depois, crie as tabelas e importe os arquivos conforme o schema do projeto.
 
-### Exercícios de WHERE
-- `01_where.sql` até `04_where.sql` - Exercícios sobre filtros e condições
+## Exercícios e prática
 
-### Exercícios de JOIN
-- `01_join.sql` até `03_join.sql` - Exercícios sobre joins entre tabelas
+O repositório também inclui material para treino:
+
+- `21` arquivos em `exercicios/`
+- `7` arquivos em `praticar/`
+
+Temas disponíveis:
+
+- `WHERE`
+- `GROUP BY`
+- `JOIN`
+
+## Requisitos
+
+- `sqlite3` para executar o banco localmente
+
+Se preferir, você também pode adaptar os scripts para outro SGBD, mas alguns comandos e funções foram escritos pensando em SQLite.
 
 ## Objetivo
 
-Fornecer exemplos práticos e arquivos de dados para aprendizado e prática de consultas SQL em um ambiente controlado. Ideal para iniciantes que desejam entender como operar em um banco de dados relacional.
-
-## Uso
-
-1. Clone o repositório
-2. Importe os arquivos CSV em seu SGBD preferido (por exemplo, MySQL, PostgreSQL, SQLite)
-3. Execute os scripts `.sql` para ver exemplos práticos e teste suas próprias consultas
-4. Resolva os exercícios na pasta `exercicios/` para praticar os conceitos aprendidos
+Servir como apoio prático para quem está aprendendo SQL com exemplos curtos, dados reais de teste e exercícios para praticar consulta, filtro, agregação e relacionamento entre tabelas.

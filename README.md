@@ -2,7 +2,7 @@
 
 Repositório com exemplos, exercícios e arquivos de apoio para estudo de SQL usando uma base simples de clientes, produtos e transações.
 
-O material está organizado em uma sequência progressiva: começando com `SELECT` e `WHERE`, avançando para agregações, `GROUP BY`, `JOIN`, subqueries e `CTE`.
+O material está organizado em uma sequência progressiva: começando com `SELECT` e `WHERE`, avançando para agregações, `GROUP BY`, `JOIN`, subqueries, `CTE` e funções de janela.
 
 ## Conteúdo
 
@@ -34,10 +34,13 @@ Os arquivos em `src/` seguem a trilha principal do curso:
 - `15_subquery.sql`: subquery para cruzar clientes entre datas
 - `16_subquery.sql`: subquery derivada no `FROM`
 - `17_cte.sql`: introdução a `CTE` com `WITH` e composição de consultas
+- `18_window_function.sql`: soma acumulada com `SUM(...) OVER`
+- `19_window_function.sql`: métricas por cliente com `SUM(...) OVER` e `LAG`
+- `20_window_function.sql`: diferença entre datas com `LAG` e `JULIANDAY`
 
 ## Base de dados
 
-O projeto já inclui um banco SQLite em [`database.db`](/home/leandro/repos/github/curso-sql/database.db), com estas tabelas:
+O projeto já inclui um banco SQLite em [`database.db`](database.db), com estas tabelas:
 
 - `clientes`
 - `produtos`
@@ -67,6 +70,7 @@ Dentro do SQLite, você pode executar consultas manualmente ou carregar um scrip
 .read src/01_select.sql
 .read src/13_join.sql
 .read src/17_cte.sql
+.read src/20_window_function.sql
 ```
 
 Para listar as tabelas:
@@ -90,7 +94,7 @@ Depois, crie as tabelas e importe os arquivos conforme o schema do projeto.
 
 O repositório também inclui material para treino:
 
-- `22` arquivos em `exercicios/`
+- `30` arquivos em `exercicios/`
 - `7` arquivos em `praticar/`
 
 Temas disponíveis:
@@ -99,6 +103,7 @@ Temas disponíveis:
 - `GROUP BY`
 - `JOIN`
 - `CTE`
+- funções de janela, incluindo acumulados, rankings por usuário e saldo de pontos
 
 ## Requisitos
 
@@ -108,4 +113,4 @@ Se preferir, você também pode adaptar os scripts para outro SGBD, mas alguns c
 
 ## Objetivo
 
-Servir como apoio prático para quem está aprendendo SQL com exemplos curtos, dados reais de teste e exercícios para praticar consulta, filtro, agregação, relacionamento entre tabelas e composição de consultas com subqueries e `CTE`.
+Servir como apoio prático para quem está aprendendo SQL com exemplos curtos, dados reais de teste e exercícios para praticar consulta, filtro, agregação, relacionamento entre tabelas, composição de consultas com subqueries e `CTE`, além de análises com funções de janela.
